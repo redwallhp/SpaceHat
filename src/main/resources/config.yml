@@ -1,0 +1,12 @@
+# Damage per second (1 = half a heart)
+damage: 1.0
+
+# Display a message to the player when they take their helmet off
+warming_message: "&7It seems you've removed your space helmet. Don't you feel silly? &c(Type &e/rehat&c to put it back on)"
+
+# Define death messages for suffocation. %p will be replaced with the player name
+death_messages:
+- "%p suffocated in the vacuum of space"
+- "%p didn't wear a helmet beyond this point"
+- "%p is too cool to wear a helmet"
+- "%p's head exploded"

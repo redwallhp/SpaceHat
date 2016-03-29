@@ -1,0 +1,16 @@
+name: SpaceHat
+main: io.github.redwallhp.spacehat.SpaceHat
+description: Hats for use in space
+author: redwall_hp
+version: ${project.version}
+
+permissions:
+  rehat.user:
+    default: true
+    description: Basic permission to use the /rehat command
+
+commands:
+  rehat:
+    description: Put your helmet back on
+    usage: /rehat
+    permission: rehat.user
