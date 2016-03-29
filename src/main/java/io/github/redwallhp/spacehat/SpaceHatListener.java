@@ -56,6 +56,7 @@ public class SpaceHatListener implements Listener {
             if (event.getCurrentItem().getType().equals(Material.GLASS) || event.getCurrentItem().getType().equals(Material.STAINED_GLASS)) {
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfiguration().WARNING));
                 player.setMetadata("noSpaceHat", new FixedMetadataValue(plugin, event.getCurrentItem()));
+                event.setCurrentItem(null);
             }
         }
     }

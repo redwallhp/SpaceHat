@@ -40,24 +40,10 @@ public class SpaceHat extends JavaPlugin implements CommandExecutor {
             if (!player.hasMetadata("noSpaceHat")) return true;
 
             ItemStack hat = (ItemStack) player.getMetadata("noSpaceHat").get(0).value();
-            boolean rehat = false;
-            for (int i=0; i<player.getInventory().getSize(); i++) {
-                ItemStack stack = player.getInventory().getItem(i);
-                if (stack != null && hat != null && stack.getType().equals(hat.getType())) {
-                    ItemStack newHat = stack.clone();
-                    newHat.setAmount(1);
-                    player.getInventory().setHelmet(newHat);
-                    player.removeMetadata("noSpaceHat", this);
-                    stack.setAmount(stack.getAmount() - 1);
-                    if (stack.getAmount() < 1) {
-                        player.getInventory().setItem(i, null);
-                    }
-                    rehat = true;
-                    break;
-                }
-            }
-
-            if (!rehat) {
+            if (hat != null) {
+                player.getInventory().setHelmet(hat);
+                player.removeMetadata("noSpaceHat", this);
+            } else {
                 sender.sendMessage(ChatColor.RED + "You don't have your hat item!");
             }
 
